@@ -1,0 +1,59 @@
+1. Inicio
+2. funcion principal()
+3. 	nombres(4), x(1000)[{A - Z}, {a - z}, {BS}]<-- {"José","Luis","María","Ana"}
+4. 	notas(4)(4), d [0-n]<-- {{9,10,8,7},{3,10,6,5},{7,8,10,9},{10,9,8,6}}
+5. 	suma, d [0-n] <--0
+6.     	fila,i [0-n] <--0	   
+7. 	columna,i [0-n] <--0
+8.	promedio,d[0-n]
+
+9.	<< "Reporte de notas del Paralelo"		
+
+10.    	Para (fila<--0, fila<4, 1) haga
+
+11.   		<< "notas de" + nombres[fila] +":"
+
+12.   		Para (columna<--0, columna<4, 1) haga
+13.         		<< notas[fila][columna]
+14.        		suma <-- suma + notas[fila][columna]
+15.    		Fin Para
+
+16.		promedio <-- obtenerPromedio(suma)
+17.      	<< "Promedio de notas:" + promedio
+
+18.    	 Fin Para
+
+19.         escribirMensajePromedioMaterias(notas)   
+20. fin funcion principal
+
+
+
+21. funcion escribirMensajePromedioMaterias(notas(4)(4), d)
+22.	mensaje,x(1000)[{A - Z}, {a - z}, {BS}]	
+23.	fila, i[0-n] <--0
+24.     indice, i[0-n] <--0
+
+25.	Para (indice<--0, indice<4,1) haga
+26.		Para (fila<--0, fila<4,1)haga
+27.			suma <-- suma + notas[fila][indice]
+28.		Fin Para
+29.		mensaje <-- obtenerMensaje(indice, obtenerPromedio(suma))
+30.		<< mensaje			
+31.	Fin Para
+32. fin funcion obtenerMensajePromedioMaterias
+
+
+
+33. funcion obtenerMensaje(indice, i ; promedio, d) : x
+34. 	mensaje,x(1000)[{A - Z}, {a - z}, {BS}]
+35.	materias(4),x(1000)[{A - Z}, {a - z}, {BS}]<-- {"Programación","Matemáticas","Base de Datos","Estructuras de Datos"}
+36.	mensaje<-- "Promedio de notas" + materias[indice] + ":" + promedio
+37.	retornar mensaje
+38. fin funcion obtenerMensaje
+
+39. funcion obtenerPromedio(suma ,d): d
+40.	promedio , d [o-n]
+41. 	promedio <-- suma/4
+42. 	retornar promedio
+43. fin funcion obtenerPromedio
+44. Fin
