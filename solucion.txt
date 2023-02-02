@@ -20,10 +20,11 @@
 
 16.		promedio <-- obtenerPromedio(suma)
 17.      	<< "Promedio de notas:" + promedio
+17.		suma <-- 0
 
 18.    	 Fin Para
 
-19.         escribirMensajePromedioMaterias(notas)   
+19.      escribirMensajePromedioMaterias(notas)   
 20. fin funcion principal
 
 
@@ -32,13 +33,14 @@
 22.	mensaje,x(1000)[{A - Z}, {a - z}, {BS}]	
 23.	fila, i[0-n] <--0
 24.     indice, i[0-n] <--0
-
+24.	suma, d[0-n]<--0
 25.	Para (indice<--0, indice<4,1) haga
 26.		Para (fila<--0, fila<4,1)haga
 27.			suma <-- suma + notas[fila][indice]
 28.		Fin Para
 29.		mensaje <-- obtenerMensaje(indice, obtenerPromedio(suma))
-30.		<< mensaje			
+30.		<< mensaje
+30.		suma <-- 0			
 31.	Fin Para
 32. fin funcion obtenerMensajePromedioMaterias
 
